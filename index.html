@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comidas AMICI - Pizza y Lomos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="./assets/logo/logo_redondeado.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap/style-bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/whatsapp-float.css">
+    
+    <style>
+        /* MEJORAS ESPECÍFICAS PARA INDEX */
+        :root {
+            --amici-gold: #a6a182;
+            --amici-dark: #0e110d;
+            --amici-light: #ffffff;
+        }
+        
+        body {
+            background: #0e110d;
+            color: #aeb0b4;
+            font-family: 'Hanken Grotesk', sans-serif;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+        
+        /* HERO BANNER MEJORADO */
+        .hero-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('./images/home/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-content {
+            padding: 2rem 1rem;
+        }
+        
+        .hero-badge {
+            background: var(--amici-gold);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .hero-title {
+            color: white;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title span {
+            color: var(--amici-gold);
+        }
+        
+        .hero-text {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .hero-btn {
+            background: var(--amici-gold);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-btn:hover {
+            background: white;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(166, 161, 130, 0.3);
+        }
+        
+        /* BOTÓN CARTA COMPLETA */
+        .carta-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(166, 161, 130, 0.9);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .carta-btn:hover {
+            background: white;
+            color: #000;
+        }
+        
+        /* SECCIÓN MENÚ */
+        .menu-section {
+            padding: 4rem 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-badge {
+            color: var(--amici-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .section-title {
+            color: white;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        /* TABS DE CATEGORÍAS */
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+        
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #aeb0b4;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: var(--amici-gold);
+            color: white;
+        }
+        
+        /* GRID DE PRODUCTOS */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+        
+        .product-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: var(--amici-gold);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-price {
+            color: var(--amici-gold);
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .product-desc {
+            color: #aeb0b4;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: #0a0c0a;
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .footer-logo {
+            color: var(--amici-gold);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .footer-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-contact h3,
+        .footer-hours h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item,
+        .hours-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-item i,
+        .hours-item i {
+            color: var(--amici-gold);
+            margin-top: 3px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .hero-banner {
+                min-height: 70vh;
+                background-attachment: scroll;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .carta-btn {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                margin: 2rem auto 0;
+                display: inline-flex;
+            }
+            
+            .menu-tabs {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .menu-tabs::-webkit-scrollbar {
+                height: 4px;
+            }
+            
+            .menu-tabs::-webkit-scrollbar-thumb {
+                background: var(--amici-gold);
+                border-radius: 2px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-tabs {
+                justify-content: flex-start;
+            }
+            
+            .tab-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* ANIMACIONES */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .product-card {
+            animation: fadeIn 0.5s ease-out;
+            animation-fill-mode: both;
+        }
+        
+        .product-card:nth-child(2) { animation-delay: 0.1s; }
+        .product-card:nth-child(3) { animation-delay: 0.2s; }
+        .product-card:nth-child(4) { animation-delay: 0.3s; }
+        .product-card:nth-child(5) { animation-delay: 0.4s; }
+        .product-card:nth-child(6) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR MEJORADO -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./assets/logo/logo_redondeado.png" alt="AMICI Logo" height="40">
+                <span class="ms-2">Comidas AMICI</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarContent" aria-controls="navbarContent" 
+                    aria-expanded="false" aria-label="Menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu-section">
+                            <i class="fas fa-utensils"></i> Menú
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index_form_ubicacion.html">
+                            <i class="fas fa-shopping-cart"></i> Pedir
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="map.html">
+                            <i class="fas fa-map-marker-alt"></i> Ubicación
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none mt-2">
+                        <a class="nav-link btn btn-success text-white" 
+                           href="https://wa.me/543541387884" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-none d-lg-block ms-3">
+                    <a href="https://wa.me/543541387884" target="_blank" 
+                       class="btn btn-success btn-sm">
+                        <i class="fab fa-whatsapp"></i> Pedir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- SECCIÓN MENÚ -->
+    <section class="menu-section" id="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Nuestra Carta</div>
+                <h2 class="section-title">Sabores que enamoran</h2>
+            </div>
+            
+            <!-- TABS DE CATEGORÍAS -->
+            <div class="menu-tabs" id="menu-tabs">
+                <button class="tab-btn active" data-category="all">Todo</button>
+                <button class="tab-btn" data-category="Pizzas">Pizzas</button>
+                <button class="tab-btn" data-category="Hamburguesas">Hamburguesas</button>
+                <button class="tab-btn" data-category="Sandwiches">Sándwiches</button>
+                <button class="tab-btn" data-category="Empanadas">Empanadas</button>
+                <button class="tab-btn" data-category="Papas">Papas</button>
+            </div>
+            
+            <!-- CONTENEDOR DE PRODUCTOS -->
+            <div class="products-grid" id="products-container">
+                <!-- Los productos se cargan dinámicamente con JavaScript -->
+                <div class="text-center text-white py-5">
+                    <div class="spinner-border text-warning" role="status">
+                        <span class="visually-hidden">Cargando menú...</span>
+                    </div>
+                    <p class="mt-3">Cargando nuestro delicioso menú...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div>
+                    <a href="index.html" class="footer-logo">Comidas AMICI</a>
+                    <p>La mejor pizza y lomos de Bialet Massé. Calidad y sabor en cada bocado.</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Dirección</strong><br>
+                            Av. Roque Sáenz Peña 47<br>
+                            Bialet Massé, Córdoba
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Teléfono</strong><br>
+                            3541-387884
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-hours">
+                    <h3>Horarios</h3>
+                    <div class="hours-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Todos los días</strong><br>
+                            12:00 - 00:00 hs
+                        </div>
+                    </div>
+                    <div class="hours-item">
+                        <i class="fas fa-truck"></i>
+                        <div>
+                            <strong>Delivery</strong><br>
+                            30-45 minutos aprox.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Comidas AMICI. Todos los derechos reservados.</p>
+                <p>Desarrollado por SsnkCode | Tel: 3541-682310</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/543541387884" target="_blank" class="whatsapp-link">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">¡Pedí por WhatsApp!</span>
+            <span class="whatsapp-number">3541-387884</span>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/partials.js"></script>
+    <script>
+        // CARGAR PRODUCTOS DINÁMICAMENTE
+        document.addEventListener('DOMContentLoaded', function() {
+            const productsContainer = document.getElementById('products-container');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            let allProducts = [];
+            
+            // Función para cargar productos
+            function cargarProductos() {
+                fetch('./products/products.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        allProducts = data;
+                        mostrarProductos(allProducts);
+                    })
+                    .catch(error => {
+                        console.error('Error cargando productos:', error);
+                        productsContainer.innerHTML = `
+                            <div class="text-center text-white py-5" style="grid-column: 1 / -1;">
+                                <i class="fas fa-exclamation-triangle fa-2x mb-3"></i>
+                                <p>Error al cargar el menú. Por favor, intenta recargar la página.</p>
+                            </div>
+                        `;
+                    });
+            }
+            
+            // Función para mostrar productos
+            function mostrarProductos(productos) {
+                if (productos.length === 0) {
+                    productsContainer.innerHTML = `
+                        <div class="text-center text-white py-5" style="grid-column: 1 / -1;">
+                            <i class="fas fa-pizza-slice fa-2x mb-3"></i>
+                            <p>No hay productos en esta categoría.</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                let html = '';
+                productos.forEach(producto => {
+                    const imagen = producto.image || './assets/logo/logo_redondeado.png';
+                    const descripcion = producto.descripcion || 'Delicioso producto de AMICI';
+                    
+                    html += `
+                        <div class="product-card" data-category="${producto.categoria}">
+                            <img src="${imagen}" alt="${producto.titulo}" class="product-img" 
+                                 onerror="this.src='./assets/logo/logo_redondeado.png'">
+                            <div class="product-info">
+                                <h3 class="product-title">${producto.titulo}</h3>
+                                <div class="product-price">$${producto.precio.toLocaleString('es-AR')}</div>
+                                <p class="product-desc">${descripcion}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                productsContainer.innerHTML = html;
+            }
+            
+            // Filtrar productos por categoría
+            function filtrarProductos(categoria) {
+                if (categoria === 'all') {
+                    mostrarProductos(allProducts);
+                } else {
+                    const filtrados = allProducts.filter(p => p.categoria === categoria);
+                    mostrarProductos(filtrados);
+                }
+            }
+            
+            // Eventos para los botones de tabs
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remover clase active de todos los botones
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    // Agregar clase active al botón clickeado
+                    this.classList.add('active');
+                    // Filtrar productos
+                    const categoria = this.getAttribute('data-category');
+                    filtrarProductos(categoria);
+                });
+            });
+            
+            // Cargar productos al inicio
+            cargarProductos();
+            
+            // SMOOTH SCROLL PARA ENLACES INTERNOS
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Cerrar menú en móviles
+                        if (window.innerWidth < 992) {
+                            const navbarToggler = document.querySelector('.navbar-toggler');
+                            if (navbarToggler.getAttribute('aria-expanded') === 'true') {
+                                navbarToggler.click();
+                            }
+                        }
+                    }
+                });
+            });
+            
+            // NAVBAR SCROLL EFFECT
+            let lastScrollTop = 0;
+            const navbar = document.getElementById('mainNavbar');
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Agregar clase cuando se hace scroll
+                if (scrollTop > 100) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+                
+                // Ocultar navbar al bajar (solo en desktop)
+                if (window.innerWidth > 768) {
+                    if (scrollTop > lastScrollTop && scrollTop > 200) {
+                        navbar.style.transform = 'translateY(-100%)';
+                    } else {
+                        navbar.style.transform = 'translateY(0)';
+                    }
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+            
+            // MEJORAR EXPERIENCIA TÁCTIL EN MÓVILES
+            if ('ontouchstart' in window) {
+                document.querySelectorAll('.product-card, .tab-btn, .hero-btn').forEach(el => {
+                    el.style.cursor = 'pointer';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
