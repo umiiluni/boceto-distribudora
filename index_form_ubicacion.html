@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir Comida - AMICI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="./assets/logo/logo_redondeado.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap/style-bootstrap.css">
+    
+    <style>
+        /* ESTILOS SIMPLIFICADOS */
+        :root {
+            --amici-gold: #a6a182;
+            --amici-dark: #0e110d;
+            --amici-light: #ffffff;
+        }
+        
+        body {
+            background: #0e110d;
+            color: #aeb0b4;
+            font-family: 'Hanken Grotesk', sans-serif;
+            padding-top: 70px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .form-wrapper {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 15px;
+        }
+        
+        .form-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(166, 161, 130, 0.2);
+        }
+        
+        .form-title {
+            color: var(--amici-gold);
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            color: var(--amici-gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(166, 161, 130, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px; /* Previene zoom en iOS */
+        }
+        
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* BOTÓN SIMPLE QUE SIEMPRE ABRE WHATSAPP */
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 16px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            width: 100%;
+            margin-top: 2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 50px;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+        
+        .info-box {
+            background: rgba(166, 161, 130, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .form-card {
+                padding: 1.5rem;
+            }
+            
+            .form-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="./assets/logo/logo_redondeado.png" alt="AMICI Logo" height="40">
+                <span>AMICI</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarContent" aria-controls="navbarContent" 
+                    aria-expanded="false" aria-label="Menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#menu-section">
+                            <i class="fas fa-utensils"></i> Menú
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index_form_ubicacion.html">
+                            <i class="fas fa-shopping-cart"></i> Pedir
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="map.html">
+                            <i class="fas fa-map-marker-alt"></i> Ubicación
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FORMULARIO SIMPLIFICADO -->
+    <div class="form-wrapper">
+        <div class="form-card">
+            <h1 class="form-title">
+                <i class="fas fa-concierge-bell"></i> Pedí por WhatsApp
+            </h1>
+            
+            <form id="pedidoForm">
+                <div class="form-group">
+                    <label class="form-label">Tu Nombre</label>
+                    <input type="text" class="form-input" id="nombre" 
+                           placeholder="Ej: Juan Pérez" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Tu Teléfono</label>
+                    <input type="tel" class="form-input" id="telefono" 
+                           placeholder="Ej: 3541387884" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Dirección de Entrega</label>
+                    <input type="text" class="form-input" id="direccion" 
+                           placeholder="Calle, número, barrio" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">¿Qué querés pedir?</label>
+                    <textarea class="form-input" id="pedido" 
+                              placeholder="Ejemplo:
+🍕 1 Pizza Muzza grande
+🥤 2 Coca-Cola 2.25L
+🍔 1 Hamburguesa completa
+📝 Nota: Sin cebolla" required></textarea>
+                </div>
+                
+                <!-- BOTÓN QUE SIEMPRE ABRE WHATSAPP -->
+                <button type="submit" class="whatsapp-btn" id="btnWhatsApp">
+                    <i class="fab fa-whatsapp"></i> Enviar Pedido por WhatsApp
+                </button>
+            </form>
+            
+            <div class="info-box">
+                <p><i class="fas fa-clock"></i> Tiempo estimado: 30-45 minutos</p>
+                <p><i class="fas fa-phone"></i> Dudas: 3541-387884</p>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Roque Sáenz Peña 47, Bialet Massé</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/responsive-menu.js"></script>
+    <script>
+        // ========== WHATSAPP DIRECTO Y AUTOMÁTICO ==========
+        document.getElementById('pedidoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Obtener valores
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const direccion = document.getElementById('direccion').value.trim();
+            const pedido = document.getElementById('pedido').value.trim();
+            
+            // Validación simple
+            if (!nombre || !telefono || !direccion || !pedido) {
+                alert('Por favor, completa todos los campos');
+                return;
+            }
+            
+            // Número de WhatsApp de AMICI
+            const whatsappNumber = "543541387884";
+            
+            // Crear mensaje automático
+            const hora = new Date().toLocaleTimeString('es-AR', {
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            const mensaje = `¡Hola! Quiero realizar un pedido a AMICI 🍔🍕
+
+*Nombre:* ${nombre}
+*Teléfono:* ${telefono}
+*Dirección:* ${direccion}
+
+*Pedido:*
+${pedido}
+
+*Hora:* ${hora}
+
+¡Gracias! 😊`;
+            
+            // Codificar mensaje
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            
+            // Crear URL de WhatsApp
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${mensajeCodificado}`;
+            
+            // ABRIR WHATSAPP DIRECTAMENTE (siempre funciona)
+            window.open(whatsappURL, '_blank');
+            
+            // Opcional: Limpiar formulario
+            setTimeout(() => {
+                document.getElementById('pedidoForm').reset();
+            }, 1000);
+        });
+        
+        // Formatear teléfono automáticamente
+        document.getElementById('telefono').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value.length <= 4) {
+                    e.target.value = value;
+                } else {
+                    e.target.value = value.substring(0,4) + '-' + value.substring(4,10);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

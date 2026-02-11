@@ -1,0 +1,386 @@
+[
+  {
+    "id": 1,
+    "titulo": "Empanadas Saladas (Docena)",
+    "precio": 11000,
+    "categoria": "Empanadas",
+    "descripcion": null,
+    "image": "./assets/productos/empanadas-saladas.webp"
+  },
+  {
+    "id": 2,
+    "titulo": "Empanadas Dulces (Docena)",
+    "precio": 11000,
+    "categoria": "Empanadas",
+    "descripcion": null,
+    "image": "./assets/productos/empanadas-dulce.webp"
+  },
+  {
+    "id": 3,
+    "titulo": "Empanadas Jamón y Queso (Docena)",
+    "precio": 12000,
+    "categoria": "Empanadas",
+    "descripcion": null,
+    "image": "./assets/productos/empanada-jamon.webp"
+  },
+  {
+    "id": 4,
+    "titulo": "Empanadas P. Cuchillo (Docena)",
+    "precio": 12000,
+    "categoria": "Empanadas",
+    "descripcion": null,
+    "image": "./assets/productos/empanada-cuchillo.webp"
+  },
+  {
+    "id": 5,
+    "titulo": "Empanadas Pollo (Docena)",
+    "precio": 10000,
+    "categoria": "Empanadas",
+    "descripcion": null,
+    "image": "./assets/productos/empanada-pollo.webp"
+  },
+  {
+    "id": 6,
+    "titulo": "Empanadas Árabes (Docena)",
+    "precio": 12000,
+    "categoria": "Empanadas",
+    "descripcion": null,
+    "image": "./assets/productos/empanada-arabe.webp"
+  },
+  {
+    "id": 7,
+    "titulo": "Empanadas Fritas Saladas (Docena)",
+    "precio": 9000,
+    "categoria": "Empanadas",
+    "descripcion": null,
+    "image": "./assets/productos/empanadas_criollas_fritas.webp"
+  },
+  {
+    "id": 8,
+    "titulo": "Promo: 2 Docenas de Empanadas Fritas",
+    "precio": 17000,
+    "categoria": "Empanadas",
+    "descripcion": "Promoción por 2 docenas de empanadas",
+    "image": "./assets/productos/empanada-frita.webp"
+  },
+  {
+    "id": 9,
+    "titulo": "Media Docena (Variadas)",
+    "precio": 6000,
+    "categoria": "Empanadas",
+    "descripcion": null,
+    "image": "./assets/productos/empanada-media.webp"
+  },
+  {
+    "id": 10,
+    "titulo": "Empanada (Unidad)",
+    "precio": 1200,
+    "categoria": "Empanadas",
+    "descripcion": null,
+    "image": "./assets/productos/empanada-una.webp"
+  },
+  {
+    "id": 11,
+    "titulo": "Hamburguesa Abusa",
+    "precio": 10000,
+    "categoria": "Hamburguesas",
+    "descripcion": "Medallón de carne, Cebolla asada, Cheddar, Bacon",
+    "image": "./assets/productos/burger-abusa.webp"
+  },
+  {
+    "id": 12,
+    "titulo": "Hamburguesa Clásica",
+    "precio": 10000,
+    "categoria": "Hamburguesas",
+    "descripcion": "Medallón de carne, Cebolla morada, Cheddar, Queso barra",
+    "image": "./assets/productos/burger-clasica.webp"
+  },
+  {
+    "id": 13,
+    "titulo": "Hamburguesa Doble Tóxica",
+    "precio": 10000,
+    "categoria": "Hamburguesas",
+    "descripcion": "Dos medallones de carne, Cheddar",
+    "image": "./assets/productos/burger-toxica.webp"
+  },
+  {
+    "id": 14,
+    "titulo": "Hamburguesa Zarpada",
+    "precio": 10000,
+    "categoria": "Hamburguesas",
+    "descripcion": "Medallón de carne, Lechuga, Tomate, Huevo, Queso barra",
+    "image": "./assets/productos/burger-zarpada.webp"
+  },
+  {
+    "id": 15,
+    "titulo": "Hamburguesa Amici $6.000 <br> promo 2x $10.000",
+    "precio": 10000,
+    "categoria": "Hamburguesas",
+    "descripcion": "",
+    "image": "./assets/productos/burger-dos.webp"
+  },
+  {
+    "id": 15,
+    "titulo": "Promo 2x $18.000 conbinando cualquier tipo de hamburguesas <br>",
+    "precio": 18000,
+    "categoria": "Hamburguesas",
+    "descripcion": "Podés elegir y combinar diferentes hamburguesas",
+    "image": ""
+  },
+  {
+    "id": 16,
+    "titulo": "Lomito Completo <br> con papas",
+    "precio": 15000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/lomo_completo.webp"
+  },
+  {
+    "id": 17,
+    "titulo": "Sándwich Milanesa Simple <br> con papas",
+    "precio": 10000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/mila_simple.webp"
+  },
+  {
+    "id": 18,
+    "titulo": "Sándwich Milanesa Completa <br> con papas",
+    "precio": 12000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/sandwich_mila_completo.webp"
+  },
+  {
+    "id": 19,
+    "titulo": "Promo Sándwich Milanesa (2x $22.000) <br> con papas",
+    "precio": 22000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/mila-dos.webp"
+  },
+  {
+    "id": 20,
+    "titulo": "Hamburlomo Simple <br> con papas",
+    "precio": 14000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/hamburlo_simple.webp"
+  },
+  {
+    "id": 21,
+    "titulo": "Hamburlomo Doble <br> con papas",
+    "precio": 18000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/hamburlomo_doble.webp"
+  },
+  {
+    "id": 22,
+    "titulo": "Lomazo con papas",
+    "precio": 10000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/lomazo.webp"
+  },
+  {
+    "id": 23,
+    "titulo": "Promo Lomazo con papas(2x $18.000) <br> con papas",
+    "precio": 18000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/2x_lomazo.webp"
+  },
+  {
+    "id": 24,
+    "titulo": "Media Lomopizza <br> con papas",
+    "precio": 18000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/medio-lomopizza.webp"
+  },
+  {
+    "id": 25,
+    "titulo": "Lomopizza Completo <br> con papas",
+    "precio": 30000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/lomo_pizza.webp"
+  },
+  {
+    "id": 26,
+    "titulo": "Papas Solas",
+    "precio": 4500,
+    "categoria": "Papas",
+    "descripcion": "Porción de papas fritas crujientes.",
+    "image": "./assets/productos/papas-solas.webp"
+  },
+  {
+    "id": 27,
+    "titulo": "Papas con Cheddar",
+    "precio": 5500,
+    "categoria": "Papas",
+    "descripcion": "Papas fritas bañadas en salsa de cheddar.",
+    "image": "./assets/productos/papas-chedar.webp"
+  },
+  {
+    "id": 28,
+    "titulo": "Papas con Cheddar y Bacon",
+    "precio": 6000,
+    "categoria": "Papas",
+    "descripcion": "Papas fritas con cheddar y trozos de bacon crocante.",
+    "image": "./assets/productos/papas-bacon.webp"
+  },
+  {
+    "id": 29,
+    "titulo": "Pizza Muzza",
+    "precio": 8000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/muzza.webp"
+  },
+  {
+    "id": 30,
+    "titulo": "Promo Muzza (2x $15.000)",
+    "precio": 15000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/2-muzzas.webp"
+  },
+  {
+    "id": 31,
+    "titulo": "Pizza Especial",
+    "precio": 10000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-especial-salsa.webp"
+  },
+  {
+    "id": 32,
+    "titulo": "Pizza Huevo",
+    "precio": 10000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/piza_huevo.webp"
+  },
+  {
+    "id": 33,
+    "titulo": "Pizza Provenzal",
+    "precio": 10000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-prove.webp"
+  },
+  {
+    "id": 34,
+    "titulo": "Pizza Roquefort",
+    "precio": 13000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/piza_roquefort.webp"
+  },
+  {
+    "id": 35,
+    "titulo": "Pizza Fugazzeta",
+    "precio": 10000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/piza_fugazzeta.webp"
+  },
+  {
+    "id": 36,
+    "titulo": "Pizza 4 Quesos",
+    "precio": 11000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-4-quesos.webp"
+  },
+  {
+    "id": 37,
+    "titulo": "Pizza Super Especial",
+    "precio": 11000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-especial.webp"
+  },
+  {
+    "id": 38,
+    "titulo": "Pizza Capresse",
+    "precio": 11000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/piza_Caprese.webp"
+  },
+  {
+    "id": 39,
+    "titulo": "Pizza Completa",
+    "precio": 11000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-completa.webp"
+  },
+  {
+    "id": 40,
+    "titulo": "Pizza Calabreza",
+    "precio": 11000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-calabresa.webp"
+  },
+  {
+    "id": 41,
+    "titulo": "Pizza Champiñon",
+    "precio": 13000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-champi.webp"
+  },
+  {
+    "id": 42,
+    "titulo": "Pizza Rúcula",
+    "precio": 11000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-rucula.webp"
+  },
+  {
+    "id": 43,
+    "titulo": "Pizza Anchoa",
+    "precio": 13000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/piza_anchoa.webp"
+  },
+  {
+    "id": 44,
+    "titulo": "Pizza Choclo",
+    "precio": 11000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-choclo.webp"
+  },
+  {
+    "id": 45,
+    "titulo": "Pizza Napolitana",
+    "precio": 11000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-napo.webp"
+  },
+  {
+    "id": 46,
+    "titulo": "Pizza Amici",
+    "precio": 13000,
+    "categoria": "Pizzas",
+    "descripcion": null,
+    "image": "./assets/productos/pizza-amici.webp"
+  },
+  {
+    "id": 47,
+    "titulo": "Sandwich de pollo (suprema) completo <br> con papas",
+    "precio": 10000,
+    "categoria": "Sandwiches",
+    "descripcion": null,
+    "image": "./assets/productos/suprema.webp"
+  }
+]
