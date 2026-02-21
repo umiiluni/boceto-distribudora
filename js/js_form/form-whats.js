@@ -1,7 +1,7 @@
-// form-whats.js - Versión simplificada para AMICI
+// form-whats.js - Versión simplificada para distribuidora
 // Este archivo es opcional si ya incluiste el script en el HTML
 
-console.log('Formulario AMICI cargado');
+console.log('Formulario distribuidora cargado');
 
 // Función para formatear número de teléfono
 function formatearTelefono(numero) {
@@ -34,7 +34,7 @@ function crearMensajeWhatsApp(datos) {
         minute: '2-digit'
     });
     
-    return `¡Hola! Quiero realizar un pedido a AMICI 🍔🍕
+    return `¡Hola! Quiero realizar un pedido a la distribuidora 🧃📦
 
 👤 *Nombre:* ${datos.nombre}
 📱 *Teléfono:* ${datos.telefono}
@@ -63,5 +63,5 @@ function inicializarFormulario() {
         return;
     }
     
-    console.log('Formulario AMICI inicializado correctamente');
+    console.log('Formulario distribuidora inicializado correctamente');
 }

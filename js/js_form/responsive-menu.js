@@ -1,6 +1,6 @@
-// responsive-menu.js - Fix completo para menú móvil AMICI
+// responsive-menu.js - Fix completo para menú móvil distribuidora
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Inicializando menú responsive AMICI...');
+    console.log('Inicializando menú responsive distribuidora...');
     
     // Elementos del DOM
     const navbarToggler = document.querySelector('.navbar-toggler');
