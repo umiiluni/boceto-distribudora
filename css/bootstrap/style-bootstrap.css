@@ -198,6 +198,9 @@ body {
 
 /* Móviles pequeños (320px - 575px) */
 @media (max-width: 575.98px) {
+    .navbar-brand img {
+        height: 32px;
+    }
     .navbar-brand {
         font-size: 1.2rem;
     }

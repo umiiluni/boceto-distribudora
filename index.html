@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distribuidora mayorista - Bebidas y Supermercado</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="./assets/logo/logo_redondeado.png" type="image/x-icon">
+    <link rel="icon" href="./assets/logo/logoo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/bootstrap/style-bootstrap.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -384,13 +384,13 @@
     <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="./assets/logo/logo_redondeado.png" alt="Logo distribuidora" height="40">
+                <img src="./assets/logo/logoo.png" alt="Logo distribuidora" height="40">
                 <span class="ms-2">Distribuidora mayorista</span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
                     data-bs-target="#navbarContent" aria-controls="navbarContent" 
-                    aria-expanded="false" aria-label="Menú de navegación">
+                    aria-expanded="false" aria-label="Abrir navegación">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -403,12 +403,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#menu-section">
-                            <i class="fas fa-utensils"></i> Menú
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index_form_ubicacion.html">
-                            <i class="fas fa-shopping-cart"></i> Pedir
+                            <i class="fas fa-boxes"></i> Catálogo
                         </a>
                     </li>
                     <li class="nav-item">
@@ -454,9 +449,9 @@
                 <!-- Los productos se cargan dinámicamente con JavaScript -->
                 <div class="text-center text-white py-5">
                     <div class="spinner-border text-warning" role="status">
-                        <span class="visually-hidden">Cargando menú...</span>
+                        <span class="visually-hidden">Cargando catálogo...</span>
                     </div>
-                    <p class="mt-3">Cargando nuestro delicioso menú...</p>
+                    <p class="mt-3">Cargando catálogo mayorista...</p>
                 </div>
             </div>
         </div>
@@ -510,8 +505,8 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2024 Distribuidora mayorista. Todos los derechos reservados.</p>
-                <p>Desarrollado por SsnkCode | Tel: 3541-682310</p>
+                <p>&copy; 2026 Distribuidora mayorista. Todos los derechos reservados.</p>
+                <p>Desarrollado por umacode | Tel: 3549-469411</p>
             </div>
         </div>
     </footer>
@@ -823,7 +818,7 @@
                         productsContainer.innerHTML = `
                             <div class="text-center text-white py-5" style="grid-column: 1 / -1;">
                                 <i class="fas fa-exclamation-triangle fa-2x mb-3"></i>
-                                <p>Error al cargar el menú. Por favor, intenta recargar la página.</p>
+                                <p>Error al cargar el catálogo. Por favor, intenta recargar la página.</p>
                             </div>
                         `;
                     });
@@ -834,7 +829,7 @@
                 if (productos.length === 0) {
                     productsContainer.innerHTML = `
                         <div class="text-center text-white py-5" style="grid-column: 1 / -1;">
-                            <i class="fas fa-pizza-slice fa-2x mb-3"></i>
+                            <i class="fas fa-box-open fa-2x mb-3"></i>
                             <p>No hay productos en esta categoría.</p>
                         </div>
                     `;
@@ -843,17 +838,20 @@
                 
                 let html = '';
                 productos.forEach(function(producto) {
-                    const imagen = producto.image || './assets/logo/logo_redondeado.png';
+                    const imagen = producto.image || './assets/logo/logoo.png';
                     const descripcion = producto.descripcion || 'Producto disponible para distribución mayorista';
                     
                     html += `
                         <div class="product-card" data-category="${producto.categoria}" data-id="${producto.id}">
                             <img src="${imagen}" alt="${producto.titulo}" class="product-img" 
-                                onerror="this.src='./assets/logo/logo_redondeado.png'">
+                                onerror="this.src='./assets/logo/logoo.png'">
                             <div class="product-info">
                                 <h3 class="product-title">${producto.titulo}</h3>
                                 <div class="product-price">$${producto.precio.toLocaleString('es-AR')}</div>
                                 <p class="product-desc">${descripcion}</p>
+                                <button type="button" class="btn btn-sm btn-outline-warning w-100 mt-2 btn-add-cart">
+                                    Añadir al carrito
+                                </button>
                             </div>
                         </div>
                     `;
@@ -861,9 +859,13 @@
                 
                 productsContainer.innerHTML = html;
                 
-                const cards = productsContainer.querySelectorAll('.product-card');
-                cards.forEach(function(card) {
-                    card.addEventListener('click', function() {
+                const buttons = productsContainer.querySelectorAll('.btn-add-cart');
+                buttons.forEach(function(button) {
+                    button.addEventListener('click', function() {
+                        const card = button.closest('.product-card');
+                        if (!card) {
+                            return;
+                        }
                         const id = parseInt(card.getAttribute('data-id'), 10);
                         const producto = allProducts.find(function(p) {
                             return p.id === id;
