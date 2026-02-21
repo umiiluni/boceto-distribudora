@@ -69,7 +69,7 @@
     "precio": 1200,
     "categoria": "Bebidas sin alcohol",
     "descripcion": "Pack x6 botellas de agua sin gas 2.25L.",
-    "image": "./productos/agua.png"
+    "image": "./productos/agua.webp"
   },
   {
     "id": 10,
