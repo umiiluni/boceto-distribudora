@@ -5,7 +5,7 @@
     "precio": 1500,
     "categoria": "Bebidas alcohólicas",
     "descripcion": "Caja x12 botellas retornables de cerveza rubia 1L.",
-    "image": "./productos/cerveza-rubia-1l.png"
+    "image": "./productos/cerveza-rubia.png"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "precio": 1200,
     "categoria": "Bebidas alcohólicas",
     "descripcion": "Pack x24 latas de 473ml.",
-    "image": "./productos/cerveza-lata-473.png"
+    "image": "./productos/cerveza-lata.png"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "precio": 3200,
     "categoria": "Bebidas alcohólicas",
     "descripcion": "Caja x6 botellas de vino tinto Malbec.",
-    "image": "./productos/vino-malbec-750.png"
+    "image": "./productos/vino-tinto.png"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "precio": 5500,
     "categoria": "Bebidas alcohólicas",
     "descripcion": "Caja x6 unidades de fernet 750ml.",
-    "image": "./productos/fernet-750.png"
+    "image": "./productos/fernet.png"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "precio": 4800,
     "categoria": "Bebidas alcohólicas",
     "descripcion": "Caja x6 botellas de vodka 1L.",
-    "image": "./productos/vodka-1l.png"
+    "image": "./productos/vodka.png"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "precio": 1800,
     "categoria": "Bebidas sin alcohol",
     "descripcion": "Pack x6 botellas sabor cola 2.25L.",
-    "image": "./productos/gaseosa-cola-225.png"
+    "image": "./productos/cola.png"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "precio": 1800,
     "categoria": "Bebidas sin alcohol",
     "descripcion": "Pack x6 botellas lima-limón 2.25L.",
-    "image": "./productos/gaseosa-lima-225.png"
+    "image": "./productos/lima-limon.png"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "precio": 1200,
     "categoria": "Bebidas sin alcohol",
     "descripcion": "Pack x6 botellas de agua con gas 2.25L.",
-    "image": "./productos/agua-gas-225.png"
+    "image": "./productos/agua-gas.png"
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "precio": 1200,
     "categoria": "Bebidas sin alcohol",
     "descripcion": "Pack x6 botellas de agua sin gas 2.25L.",
-    "image": "./productos/agua-sin-gas-225.png"
+    "image": "./productos/agua.png"
   },
   {
     "id": 10,
@@ -77,7 +77,7 @@
     "precio": 2300,
     "categoria": "Bebidas sin alcohol",
     "descripcion": "Pack x12 latas de bebida energizante 473ml.",
-    "image": "./productos/energizante-473.png"
+    "image": "./productos/energizante.png"
   },
   {
     "id": 11,
@@ -85,7 +85,7 @@
     "precio": 2200,
     "categoria": "Almacén",
     "descripcion": "Caja x12 botellas de aceite de girasol 900ml.",
-    "image": "./productos/aceite-girasol-900.png"
+    "image": "./productos/aceite.png"
   },
   {
     "id": 12,
@@ -93,7 +93,7 @@
     "precio": 900,
     "categoria": "Almacén",
     "descripcion": "Bolsa x10 paquetes de harina 000 1kg.",
-    "image": "./productos/harina-000-1kg.png"
+    "image": "./productos/harina.png"
   },
   {
     "id": 13,
@@ -101,7 +101,7 @@
     "precio": 1100,
     "categoria": "Almacén",
     "descripcion": "Bolsa x10 paquetes de arroz largo fino 1kg.",
-    "image": "./productos/arroz-largo-1kg.png"
+    "image": "./productos/arroz.png"
   },
   {
     "id": 14,
@@ -109,7 +109,7 @@
     "precio": 950,
     "categoria": "Almacén",
     "descripcion": "Bolsa x10 paquetes de azúcar 1kg.",
-    "image": "./productos/azucar-1kg.png"
+    "image": "./productos/azucar.png"
   },
   {
     "id": 15,
@@ -117,7 +117,7 @@
     "precio": 3200,
     "categoria": "Almacén",
     "descripcion": "Caja x10 paquetes de yerba mate 1kg.",
-    "image": "./productos/yerba-1kg.png"
+    "image": "./productos/yerba.png"
   },
   {
     "id": 16,
@@ -141,7 +141,7 @@
     "precio": 900,
     "categoria": "Limpieza y hogar",
     "descripcion": "Caja x12 botellas de lavandina 1L.",
-    "image": "./productos/lavandina-1l.png"
+    "image": "./productos/lavandina.png"
   },
   {
     "id": 19,
@@ -149,7 +149,7 @@
     "precio": 1100,
     "categoria": "Limpieza y hogar",
     "descripcion": "Caja x12 unidades de detergente líquido 750ml.",
-    "image": "./productos/detergente-750ml.png"
+    "image": "./productos/detergente.png"
   },
   {
     "id": 20,
@@ -157,7 +157,7 @@
     "precio": 1800,
     "categoria": "Limpieza y hogar",
     "descripcion": "Caja x12 unidades de suavizante 900ml.",
-    "image": "./productos/suavizante-900ml.png"
+    "image": "./productos/suavizante.png"
   },
   {
     "id": 21,
@@ -165,7 +165,7 @@
     "precio": 800,
     "categoria": "Limpieza y hogar",
     "descripcion": "Fardo x12 paquetes de 4 rollos.",
-    "image": "./productos/papel-higienico-x4.png"
+    "image": "./productos/papel-higienico.png"
   },
   {
     "id": 22,
@@ -181,7 +181,7 @@
     "precio": 17000,
     "categoria": "Ofertas",
     "descripcion": "Combo mayorista de 12 cervezas surtidas 1L.",
-    "image": "./productos/combo-cervezas-12x1l.png"
+    "image": "./productos/promo-cervezas.png"
   },
   {
     "id": 24,
@@ -189,7 +189,7 @@
     "precio": 9500,
     "categoria": "Ofertas",
     "descripcion": "Pack surtido de 6 gaseosas 2.25L.",
-    "image": "./productos/combo-gaseosas-6x225.png"
+    "image": "./productos/promo-gaseosas.png"
   },
   {
     "id": 25,
